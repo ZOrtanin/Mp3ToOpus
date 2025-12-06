@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory
 import os
 import subprocess
+import time
 
 
 app = Flask(__name__)
@@ -54,8 +55,10 @@ def convert():
     #     output_file
     # ]
 
+    new_name = 
+
     # Получаем список процессов, отсортированных по CPU и памяти
-    cmd = "cd uploads && ffmpeg -i in1.mp3 -c:a libopus -b:a 128k -vbr on -compression_level 10 out.opus"
+    cmd = "cd uploads && ffmpeg -i in.mp3 -c:a libopus -b:a 128k -vbr on -compression_level 10 out.opus"
     #result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
 
     try:

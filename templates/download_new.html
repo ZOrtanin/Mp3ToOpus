@@ -27,27 +27,12 @@
                     <h1 class="title has-text-centered">Скачать файл</h1>
 
                     
-                        {% if files %}
-                            <table class="table is-fullwidth is-striped">
-                                <thead>
-                                    <tr>
-                                        <th>Имя файла</th>
-                                        <th>Действие</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {% for file in files %}
-                                    <tr>
-                                        <td>{{ file }}</td>
-                                        <td>
-                                            <a href="{{ url_for('download', filename=file) }}" class="button is-small is-info">
-                                                Скачать
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    {% endfor %}
-                                </tbody>
-                            </table>
+                        {% if file %}
+                        <div class="has-text-centered mb-5">
+                            <a href="{{ url_for('download', filename=file) }}" class="button is-link is-large">
+                               скачть 
+                            </a>
+                        </div>
                         {% else %}
                             <div class="notification is-warning">
                                 Нет доступных файлов.
